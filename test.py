@@ -21,6 +21,7 @@ opt = parser.parse_args()
 # crnn params
 # 3p6m_third_ac97p8.pth
 crnn_model_path = 'trained_models/crnn_Rec_done_1.pth'
+crnn_model_path = 'trained_models/mixed_second_finetune_acc97p7.pth'
 alphabet = str1
 nclass = len(alphabet)+1
 
@@ -55,15 +56,17 @@ def crnn_recognition(cropped_image, model):
 
 
 if __name__ == '__main__':
-
+    tmp=    torch.cuda.is_available()
+    print(tmp)
+    map_location=torch.device('cpu')
 	# crnn network
     model = crnn.CRNN(32, 1, nclass, 256)
-    if torch.cuda.is_available():
-        model = model.cuda()
+    #if torch.cuda.is_available():
+     #   model = model.cuda()
     print('loading pretrained model from {0}'.format(crnn_model_path))
     # 导入已经训练好的crnn模型
-    model.load_state_dict(torch.load(crnn_model_path))
-    
+    model.load_state_dict(torch.load(crnn_model_path, map_location='cpu'))
+
     started = time.time()
     ## read an image
     image = cv2.imread(opt.images_path)
@@ -71,4 +74,4 @@ if __name__ == '__main__':
     crnn_recognition(image, model)
     finished = time.time()
     print('elapsed time: {0}'.format(finished-started))
-    
+

@@ -1,6 +1,9 @@
 import numpy as np
 import sys, os
 import time
+
+
+import pudb;pu.db
 import cv2
 sys.path.append(os.getcwd())
 # crnn packages

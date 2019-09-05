@@ -1,3 +1,12 @@
+
+'''
+训练第一步,先用这个文件生成图片集,合对应的label!!!!!!!!
+
+'''
+
+
+
+
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import random
 import glob
@@ -147,10 +156,13 @@ if __name__ == '__main__':
         info_str = ''.join(info_list)
 
     # 图片标签
-    file  = open('data_set/val_set.txt', 'w', encoding='utf-8')
-    total = 1000
+    #写到val_set 里面.
+    #存到项目外面,防止git时候git太多.
+    file  = open('/data/test99/val_set.txt', 'w', encoding='utf-8')
+    #修改total这个参数,来控制生成的数量.干10万吧
+    total = 10000
     for num in range(0,total):
-        main('data_set/val_set/', num, file)
+        main('/data/test99/data_set/', num, file) #这一行是创建图片,保存图片. 并且标签写入file中.
         if num % 1000 == 0:
             print('[%d/%d]'%(num,total))
     file.close()

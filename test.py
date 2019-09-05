@@ -3,11 +3,7 @@ import sys, os
 import time
 
 
-<<<<<<< HEAD
 #import pudb;pu.db
-=======
-import pudb;pu.db
->>>>>>> 3f2713ac52a33885eb55e4345dc05f8e86753c36
 import cv2
 sys.path.append(os.getcwd())
 # crnn packages
@@ -31,6 +27,8 @@ crnn_model_path = 'trained_models/crnn_Rec_done_1.pth'
 crnn_model_path = 'trained_models/mixed_second_finetune_acc97p7.pth'
 alphabet = str1
 nclass = len(alphabet)+1
+print(nclass)   #6736   总共分了6735个汉子.
+#nclass是词典+1,最后一个表示识别不出来.
 
 # crnn文本信息识别
 def crnn_recognition(cropped_image, model):
@@ -52,9 +50,27 @@ def crnn_recognition(cropped_image, model):
     image = Variable(image)
 
     model.eval()
-    preds = model(image)
+    '''
+    主要是针对model 在训练时和评价时不同的 Batch Normalization  和  Dropout 方法模式。
 
+ 
+
+https://blog.csdn.net/jinxin521125/article/details/78435899
+
+eval（）时，pytorch会自动把BN和DropOut固定住，不会取平均，而是用训练好的值。
+
+不然的话，一旦test的batch_size过小，很容易就会被BN层导致生成图片颜色失真极大。
+
+ 
+
+https://zhuanlan.zhihu.com/p/26893755
+
+model.eval()，让model变成测试模式，对dropout和batch normalization的操作在训练和测试的时候是不一样的
+    '''
+    preds = model(image)
+    #preds: 26,1,37
     _, preds = preds.max(2)
+    #preds: 坐标. 所以就得到了预测后的分类结果.
     preds = preds.transpose(1, 0).contiguous().view(-1)
 
     preds_size = Variable(torch.IntTensor([preds.size(0)]))

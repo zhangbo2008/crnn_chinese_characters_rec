@@ -27,6 +27,10 @@ from dataset_v2 import baiduDataset
 
 
 # custom weights initialization called on crnn
+
+'''
+下面看训练代码
+'''
 def weights_init(m):
     classname = m.__class__.__name__
     if classname.find('Conv') != -1:
@@ -128,7 +132,12 @@ def backward_hook(self, grad_input, grad_output):
         g[g != g] = 0   # replace all nan/inf in gradients to zero
 
 if __name__ == '__main__':
-
+    '''
+    
+    看数据集怎么处理的
+    
+    
+    '''
     # args = init_args()
     # manualSeed = random.randint(1, 10000)  #fix seed
     manualSeed=10
@@ -140,11 +149,21 @@ if __name__ == '__main__':
     # alphabet = alphabet = utils.to_alphabet("H:/DL-DATASET/BaiduTextR/train.list")
 
     # store model path
+    '''
+    存模型的路径
+    '''
     if not os.path.exists('./expr'):
         os.mkdir('./expr')
     # read train set
     # dataset = baiduDataset("H:/DL-DATASET/BaiduTextR/train_images/train_images", "H:/DL-DATASET/BaiduTextR/train.list", params.alphabet, True)
-    dataset = baiduDataset("H:/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/train.txt", params.alphabet, False, (params.imgW, params.imgH))
+
+    dataset = baiduDataset(
+        os.path.dirname(os.path.abspath(__file__))+"images"
+    "/label/train.txt", params.alphabet, False, (params.imgW, params.imgH))
+
+
+
+    print(dataset)
     val_dataset = baiduDataset("H:/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/test.txt", params.alphabet, False, (params.imgW, params.imgH))
     # dataset = baiduDataset("/media/hane/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/train.txt", params.alphabet, False)
     # val_dataset = baiduDataset("/media/hane/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/test.txt", params.alphabet, False)

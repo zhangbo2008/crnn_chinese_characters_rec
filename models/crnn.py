@@ -76,7 +76,7 @@ class CRNN(nn.Module):
         :return:
         '''
         conv = self.cnn(input) #先跑cnn
-        print("conv.size",conv.size())
+
 
         # #torch.Size([1, 512, 1, 26])   得到的结果.最后图片变成了1,26
         b, c, h, w = conv.size()   #batch ,channle height ,weiht

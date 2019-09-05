@@ -27,7 +27,7 @@ crnn_model_path = 'trained_models/crnn_Rec_done_1.pth'
 crnn_model_path = 'trained_models/mixed_second_finetune_acc97p7.pth'
 alphabet = str1
 nclass = len(alphabet)+1
-print(nclass)   #6736   总共分了6735个汉子.
+# print(nclass)   #6736   总共分了6735个汉子.
 #nclass是词典+1,最后一个表示识别不出来.
 
 # crnn文本信息识别

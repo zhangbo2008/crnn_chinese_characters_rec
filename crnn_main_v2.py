@@ -118,13 +118,15 @@ def main(crnn, train_loader, val_loader, criterion, optimizer):
     while Iteration < params.niter:
         train(crnn, train_loader, criterion, Iteration)
         ## max_i: cut down the consuming time of testing, if you'd like to validate on the whole testset, please set it to len(val_loader)
-        accuracy = val(crnn, val_loader, criterion, Iteration, max_i=1000)
-        for p in crnn.parameters():
-            p.requires_grad = True
-        if accuracy > params.best_accuracy:
-            torch.save(crnn.state_dict(), '{0}/crnn_Rec_done_{1}_{2}.pth'.format(params.experiment, Iteration, accuracy))
-            torch.save(crnn.state_dict(), '{0}/crnn_best.pth'.format(params.experiment))
-        print("is best accuracy: {0}".format(accuracy > params.best_accuracy))
+        if Iteration%100==0:
+            accuracy = val(crnn, val_loader, criterion, Iteration, max_i=1000)
+            for p in crnn.parameters():
+                p.requires_grad = True
+            if accuracy > params.best_accuracy:
+                #在这里面存
+                torch.save(crnn.state_dict(), '{0}/crnn_Rec_done_{1}_{2}.pth'.format(params.experiment, Iteration, accuracy))
+                torch.save(crnn.state_dict(), '{0}/crnn_best.pth'.format(params.experiment))
+            print("is best accuracy: {0}".format(accuracy > params.best_accuracy))
         Iteration+=1
 
 def backward_hook(self, grad_input, grad_output):
@@ -158,13 +160,20 @@ if __name__ == '__main__':
     # dataset = baiduDataset("H:/DL-DATASET/BaiduTextR/train_images/train_images", "H:/DL-DATASET/BaiduTextR/train.list", params.alphabet, True)
 
     dataset = baiduDataset(
-        os.path.dirname(os.path.abspath(__file__))+"images"
-    "/label/train.txt", params.alphabet, False, (params.imgW, params.imgH))
+        "/data/test99/data_set/",
+    "/data/test99/val_set.txt", params.alphabet, False, (params.imgW, params.imgH))
 
 
 
-    print(dataset)
-    val_dataset = baiduDataset("H:/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/test.txt", params.alphabet, False, (params.imgW, params.imgH))
+
+    val_dataset  = baiduDataset(
+        "/data/test99/data_set/",
+    "/data/test99/val_set.txt", params.alphabet, False, (params.imgW, params.imgH))
+
+
+
+
+
     # dataset = baiduDataset("/media/hane/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/train.txt", params.alphabet, False)
     # val_dataset = baiduDataset("/media/hane/DL-DATASET/360M/images", "E:/08-Github-resources/00-MY-GitHub-Entries/crnn_chinese_characters_rec-master/crnn_chinese_characters_rec-master/label/test.txt", params.alphabet, False)
 

@@ -60,8 +60,12 @@ class baiduDataset(Dataset):
 	def __getitem__(self, index):
 		image_name = list(self.labels[index].keys())[0]
 		# label = list(self.labels[index].values())[0]
+		image_name=image_name.split('/')[1]
 		image = cv2.imread(self.img_root+'/'+image_name)
 		# print(self.img_root+'/'+image_name)
+
+		# print("image",image)
+		# print("image_name",image_name)
 		image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 		h, w = image.shape
 		# Data augmentation

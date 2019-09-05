@@ -1,6 +1,9 @@
 import numpy as np
 import sys, os
 import time
+
+
+#import pudb;pu.db
 import cv2
 sys.path.append(os.getcwd())
 # crnn packages
@@ -56,21 +59,33 @@ def crnn_recognition(cropped_image, model):
 
 
 if __name__ == '__main__':
+    '''
+    注意代码中是否使用cuda的书写
+    '''
     tmp=    torch.cuda.is_available()
     print(tmp)
-    map_location=torch.device('cpu')
+    map_location=torch.device('cuda')
 	# crnn network
     model = crnn.CRNN(32, 1, nclass, 256)
-    #if torch.cuda.is_available():
-     #   model = model.cuda()
+    #注意要加上下面一句话来兼容cpu和gpu
+
     print('loading pretrained model from {0}'.format(crnn_model_path))
     # 导入已经训练好的crnn模型
-    model.load_state_dict(torch.load(crnn_model_path, map_location='cpu'))
+    model.load_state_dict(torch.load(crnn_model_path, map_location=map_location))
 
     started = time.time()
     ## read an image
+    '''
+    https://oldpan.me/archives/pytorch-conmon-problem-in-training 看这个试试
+    '''
     image = cv2.imread(opt.images_path)
+    if torch.cuda.is_available():
+       model = model.cuda()
 
+    print('tes!!!!!!!!!')
+    tmp=[i.is_cuda for i in list(model.parameters())]
+    print(tmp)
+    print('tes!!!!!!!!!')
     crnn_recognition(image, model)
     finished = time.time()
     print('elapsed time: {0}'.format(finished-started))

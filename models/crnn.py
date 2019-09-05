@@ -2,7 +2,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class BidirectionalLSTM(nn.Module):
+
+
     # Inputs hidden units Out
+    #   直接继承自带的双向lstm,写好3个维度参数即可.
+#https://pytorch-cn.readthedocs.io/zh/latest/   pytorch文档
     def __init__(self, nIn, nHidden, nOut):
         super(BidirectionalLSTM, self).__init__()
 

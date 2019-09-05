@@ -1,0 +1,341 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BidirectionalLSTM	models/crnn.py	/^class BidirectionalLSTM(nn.Module):$/;"	c
+CRNN	models/crnn.py	/^class CRNN(nn.Module):$/;"	c
+DataLoader	crnn_main_v2.py	/^from torch.utils.data import DataLoader$/;"	i
+DataLoader	dataset_v2.py	/^from torch.utils.data import Dataset, DataLoader$/;"	i
+Dataset	dataset.py	/^from torch.utils.data import Dataset$/;"	i
+Dataset	dataset_v2.py	/^from torch.utils.data import Dataset, DataLoader$/;"	i
+F	models/crnn.py	/^import torch.nn.functional as F$/;"	i
+Image	data_generator/generator.py	/^from PIL import Image, ImageDraw, ImageFont, ImageFilter$/;"	i
+Image	dataset.py	/^from PIL import Image$/;"	i
+Image	dataset_v2.py	/^from PIL import Image$/;"	i
+Image	to_lmdb/to_lmdb_py2.py	/^from PIL import Image$/;"	i
+Image	to_lmdb/tolmdb_py3.py	/^from PIL import Image$/;"	i
+ImageDraw	data_generator/generator.py	/^from PIL import Image, ImageDraw, ImageFont, ImageFilter$/;"	i
+ImageFilter	data_generator/generator.py	/^from PIL import Image, ImageDraw, ImageFont, ImageFilter$/;"	i
+ImageFont	data_generator/generator.py	/^from PIL import Image, ImageDraw, ImageFont, ImageFilter$/;"	i
+Variable	crnn_main.py	/^from torch.autograd import Variable$/;"	i
+Variable	crnn_main_v2.py	/^from torch.autograd import Variable$/;"	i
+Variable	test.py	/^from torch.autograd import Variable$/;"	i
+Variable	utils.py	/^from torch.autograd import Variable$/;"	i
+__call__	dataset.py	/^    def __call__(self, batch):$/;"	m	class:alignCollate	file:
+__call__	dataset.py	/^    def __call__(self, img):$/;"	m	class:resizeNormalize	file:
+__getitem__	dataset.py	/^    def __getitem__(self, index):$/;"	m	class:lmdbDataset	file:
+__getitem__	dataset_v2.py	/^	def __getitem__(self, index):$/;"	m	class:baiduDataset	file:
+__init__	dataset.py	/^    def __init__(self, data_source, batch_size):$/;"	m	class:randomSequentialSampler
+__init__	dataset.py	/^    def __init__(self, imgH=32, imgW=256, keep_ratio=False, min_ratio=1):$/;"	m	class:alignCollate
+__init__	dataset.py	/^    def __init__(self, root=None, transform=None, target_transform=None):$/;"	m	class:lmdbDataset
+__init__	dataset.py	/^    def __init__(self, size, interpolation=Image.BILINEAR):$/;"	m	class:resizeNormalize
+__init__	dataset_v2.py	/^	def __init__(self, img_root, label_path, alphabet, isBaidu, resize, transforms=None):$/;"	m	class:baiduDataset
+__init__	models/crnn.py	/^    def __init__(self, imgH, nc, nclass, nh, n_rnn=2, leakyRelu=False):$/;"	m	class:CRNN
+__init__	models/crnn.py	/^    def __init__(self, nIn, nHidden, nOut):$/;"	m	class:BidirectionalLSTM
+__init__	utils.py	/^    def __init__(self):$/;"	m	class:averager
+__init__	utils.py	/^    def __init__(self, alphabet, ignore_case=False):$/;"	m	class:strLabelConverter
+__iter__	dataset.py	/^    def __iter__(self):$/;"	m	class:randomSequentialSampler	file:
+__len__	dataset.py	/^    def __len__(self):$/;"	m	class:lmdbDataset	file:
+__len__	dataset.py	/^    def __len__(self):$/;"	m	class:randomSequentialSampler	file:
+__len__	dataset_v2.py	/^	def __len__(self):$/;"	m	class:baiduDataset	file:
+adadelta	params.py	/^adadelta = False$/;"	v
+adam	params.py	/^adam = False$/;"	v
+add	utils.py	/^    def add(self, v):$/;"	m	class:averager
+alignCollate	dataset.py	/^class alignCollate(object):$/;"	c
+alphabet	params.py	/^alphabet = alphabets.alphabet$/;"	v
+alphabet	test.py	/^alphabet = str1$/;"	v
+alphabets	params.py	/^import alphabets$/;"	i
+alphabets	test.py	/^import alphabets$/;"	i
+argparse	crnn_main.py	/^import argparse$/;"	i
+argparse	crnn_main_v2.py	/^import argparse$/;"	i
+argparse	test.py	/^import argparse$/;"	i
+argparse	to_lmdb/tolmdb_py3.py	/^import argparse$/;"	i
+args	crnn_main.py	/^    args = init_args()$/;"	v
+args	to_lmdb/tolmdb_py3.py	/^    args = init_args()$/;"	v
+assureRatio	utils.py	/^def assureRatio(img):$/;"	f
+author	setup.py	/^    author="Jared Casper, Sean Naren",$/;"	v
+author_email	setup.py	/^    author_email="jared.casper@baidu.com, sean.narenthiran@digitalreasoning.com",$/;"	v
+averager	utils.py	/^class averager(object):$/;"	c
+backends	crnn_main.py	/^import torch.backends.cudnn as cudnn$/;"	i
+backends	crnn_main_v2.py	/^import torch.backends.cudnn as cudnn$/;"	i
+backward_hook	crnn_main_v2.py	/^def backward_hook(self, grad_input, grad_output):$/;"	f
+baiduDataset	crnn_main_v2.py	/^from dataset_v2 import baiduDataset$/;"	i
+baiduDataset	dataset_v2.py	/^class baiduDataset(Dataset):$/;"	c
+batchSize	params.py	/^batchSize = 32$/;"	v
+best_accuracy	params.py	/^best_accuracy = 50$/;"	v
+beta1	params.py	/^beta1 =0.5$/;"	v
+betas	crnn_main.py	/^                               betas=(params.beta1, 0.999))$/;"	v
+by	to_lmdb/to_lmdb_py2.py	/^import lmdb # install lmdb by "pip install lmdb"$/;"	i
+by	to_lmdb/tolmdb_py3.py	/^import lmdb  # install lmdb by "pip install lmdb"$/;"	i
+char_dict	preprocessing.py	/^	char_dict = {num : char.strip().decode('gbk','ignore') for num, char in enumerate(file.readlines())}$/;"	v
+checkImageIsValid	to_lmdb/to_lmdb_py2.py	/^def checkImageIsValid(imageBin):$/;"	f
+checkImageIsValid	to_lmdb/tolmdb_py3.py	/^def checkImageIsValid(imageBin):$/;"	f
+collate_fn	crnn_main.py	/^        collate_fn=dataset.alignCollate(imgH=params.imgH, imgW=params.imgW, keep_ratio=params.keep_ratio))$/;"	v
+collections	utils.py	/^import collections$/;"	i
+compute_std_mean	utils.py	/^def compute_std_mean(txt_path, image_prefix, NUM=None):$/;"	f
+convRelu	models/crnn.py	/^        def convRelu(i, batchNormalization=False):$/;"	f	function:CRNN.__init__
+converter	crnn_main.py	/^    converter = utils.strLabelConverter(params.alphabet)$/;"	v
+createDataset	to_lmdb/to_lmdb_py2.py	/^def createDataset(outputPath, imagePathList, labelList, lexiconList=None, checkValid=True):$/;"	f
+createDataset	to_lmdb/tolmdb_py3.py	/^def createDataset(outputPath, imagePathList, labelList, map_size, lexiconList=None, checkValid=True):$/;"	f
+create_an_image	data_generator/generator.py	/^def create_an_image(bground_path, width, height):$/;"	f
+create_extension	setup.py	/^from torch.utils.ffi import create_extension$/;"	i
+criterion	crnn_main.py	/^        criterion = criterion.cuda()$/;"	v
+criterion	crnn_main.py	/^    criterion = torch.nn.CTCLoss()$/;"	v
+crnn	crnn_main.py	/^    crnn = crnn.CRNN(params.imgH, nc, nclass, params.nh)$/;"	v
+crnn	crnn_main.py	/^import models.crnn as crnn$/;"	i
+crnn	crnn_main_v2.py	/^import models.crnn as crnn$/;"	i
+crnn	params.py	/^crnn = ''$/;"	v
+crnn	test.py	/^import models.crnn as crnn$/;"	i
+crnn_model_path	test.py	/^crnn_model_path = 'trained_models\/crnn_Rec_done_1.pth'$/;"	v
+crnn_model_path	test.py	/^crnn_model_path = 'trained_models\/mixed_second_finetune_acc97p7.pth'$/;"	v
+crnn_recognition	test.py	/^def crnn_recognition(cropped_image, model):$/;"	f
+cudnn	crnn_main.py	/^import torch.backends.cudnn as cudnn$/;"	i
+cudnn	crnn_main_v2.py	/^import torch.backends.cudnn as cudnn$/;"	i
+cv2	data_generator/generator.py	/^import cv2$/;"	i
+cv2	dataset_v2.py	/^import cv2$/;"	i
+cv2	test.py	/^import cv2$/;"	i
+cv2	to_lmdb/to_lmdb_py2.py	/^import cv2$/;"	i
+cv2	to_lmdb/tolmdb_py3.py	/^import cv2$/;"	i
+cv2	utils.py	/^import cv2$/;"	i
+darken_func	data_generator/generator.py	/^def darken_func(image):$/;"	f
+data	crnn_main.py	/^import torch.utils.data$/;"	i
+data	crnn_main_v2.py	/^import torch.utils.data$/;"	i
+dataloader	dataset_v2.py	/^	dataloader = DataLoader(dataset, batch_size=8, shuffle=False)$/;"	v	class:baiduDataset
+dataset	crnn_main.py	/^import dataset$/;"	i
+dataset	dataset_v2.py	/^	dataset = baiduDataset("H:\/DL-DATASET\/BaiduTextR\/train_images\/train_images", "H:\/DL-DATASET\/BaiduTextR\/train.list", params.alphabet, True)$/;"	v	class:baiduDataset
+db	test.py	/^import pudb;pu.db$/;"	i
+decode	utils.py	/^    def decode(self, t, length, raw=False):$/;"	m	class:strLabelConverter
+description	setup.py	/^    description="PyTorch wrapper for warp-ctc",$/;"	v
+displayInterval	params.py	/^displayInterval = 1$/;"	v
+enable_gpu	setup.py	/^    enable_gpu = False$/;"	v
+enable_gpu	setup.py	/^    enable_gpu = True$/;"	v
+encode	utils.py	/^    def encode(self, text):$/;"	m	class:strLabelConverter
+experiment	params.py	/^experiment = '.\/expr'$/;"	v
+ext_modules	setup.py	/^    ext_modules=[ffi],$/;"	v
+extra_compile_args	setup.py	/^    extra_compile_args=extra_compile_args)$/;"	v
+extra_link_args	setup.py	/^    extra_link_args=['-Wl,-rpath,' + os.path.realpath(warp_ctc_path)],$/;"	v
+ffi	setup.py	/^ffi = create_extension($/;"	v
+ffi	setup.py	/^ffi = ffi.distutils_extension()$/;"	v
+file	data_generator/generator.py	/^    file  = open('data_set\/val_set.txt', 'w', encoding='utf-8')$/;"	v
+find_packages	setup.py	/^from setuptools import setup, find_packages$/;"	i
+finished	test.py	/^    finished = time.time()$/;"	v
+forward	models/crnn.py	/^    def forward(self, input):$/;"	m	class:BidirectionalLSTM
+forward	models/crnn.py	/^    def forward(self, input):$/;"	m	class:CRNN
+get_batch_label	utils.py	/^def get_batch_label(d, i):$/;"	f
+get_labels	dataset_v2.py	/^	def get_labels(self, label_path):$/;"	m	class:baiduDataset
+glob	data_generator/generator.py	/^import glob$/;"	i
+headers	setup.py	/^    headers=headers,$/;"	v
+headers	setup.py	/^headers = ['src\/cpu_binding.h']$/;"	v
+image	crnn_main.py	/^        image = image.cuda()$/;"	v
+image	crnn_main.py	/^    image = Variable(image)$/;"	v
+image	crnn_main.py	/^    image = torch.FloatTensor(params.batchSize, 3, params.imgH, params.imgH)$/;"	v
+image	test.py	/^    image = cv2.imread(opt.images_path)$/;"	v
+imagePathList	to_lmdb/to_lmdb_py2.py	/^    imagePathList = list(imgdata)$/;"	v
+imgDir	to_lmdb/tolmdb_py3.py	/^    imgDir = args.image_dir$/;"	v
+imgH	params.py	/^imgH = 32$/;"	v
+imgPath	to_lmdb/tolmdb_py3.py	/^        imgPath = os.path.join(imgDir, line.split()[0].decode('utf-8'))$/;"	v
+imgPathList	to_lmdb/tolmdb_py3.py	/^    imgPathList = []$/;"	v
+imgW	params.py	/^imgW = 160$/;"	v
+img_prefix	compute_stds_means.py	/^img_prefix = "H:\/DL-DATASET\/360M\/images"$/;"	v
+imgdata	to_lmdb/to_lmdb_py2.py	/^    imgdata = open(".\/train.txt")$/;"	v
+imgdata	to_lmdb/tolmdb_py3.py	/^    imgdata = open(args.label_file, mode='rb')$/;"	v
+imghdr	to_lmdb/to_lmdb_py2.py	/^import imghdr$/;"	i
+imghdr	to_lmdb/tolmdb_py3.py	/^import imghdr$/;"	i
+include_dirs	setup.py	/^    include_dirs=include_dirs,$/;"	v
+include_dirs	setup.py	/^include_dirs = [os.path.realpath('..\/include')]$/;"	v
+info_list	data_generator/generator.py	/^        info_list = [part.strip().replace('\\t', '') for part in file.readlines()]$/;"	v
+info_str	data_generator/generator.py	/^        info_str = ''.join(info_list)$/;"	v
+init_args	crnn_main.py	/^def init_args():$/;"	f
+init_args	to_lmdb/tolmdb_py3.py	/^def init_args():$/;"	f
+install	to_lmdb/to_lmdb_py2.py	/^import lmdb # install lmdb by "pip install lmdb"$/;"	i
+install	to_lmdb/tolmdb_py3.py	/^import lmdb  # install lmdb by "pip install lmdb"$/;"	i
+keep_ratio	params.py	/^keep_ratio = False$/;"	v
+labelList	to_lmdb/to_lmdb_py2.py	/^    labelList = []$/;"	v
+labelList	to_lmdb/tolmdb_py3.py	/^    labelList = []$/;"	v
+language	setup.py	/^    language='c++',$/;"	v
+length	crnn_main.py	/^    length = Variable(length)$/;"	v
+length	crnn_main.py	/^    length = torch.IntTensor(params.batchSize)$/;"	v
+lib_ext	setup.py	/^    lib_ext = ".dylib"$/;"	v
+lib_ext	setup.py	/^    lib_ext = ".so"$/;"	v
+libraries	setup.py	/^    libraries=['warpctc'],$/;"	v
+library_dirs	setup.py	/^    library_dirs=[os.path.realpath(warp_ctc_path)],$/;"	v
+license	setup.py	/^    license="Apache",$/;"	v
+lines	to_lmdb/tolmdb_py3.py	/^    lines = list(imgdata)$/;"	v
+list_a	data_generator/to_dictionary.py	/^	list_a = [3,4,5,8]$/;"	v
+list_b	data_generator/to_dictionary.py	/^	list_b = [3,4,5,6,7]$/;"	v
+list_c	data_generator/to_dictionary.py	/^	list_c = list(set_c)$/;"	v
+lmdb	dataset.py	/^import lmdb$/;"	i
+lmdb	to_lmdb/to_lmdb_py2.py	/^import lmdb # install lmdb by "pip install lmdb"$/;"	i
+lmdb	to_lmdb/tolmdb_py3.py	/^import lmdb  # install lmdb by "pip install lmdb"$/;"	i
+lmdbDataset	dataset.py	/^class lmdbDataset(Dataset):$/;"	c
+loadData	utils.py	/^def loadData(v, data):$/;"	f
+loss_avg	crnn_main.py	/^    loss_avg = utils.averager()$/;"	v
+lr	params.py	/^lr = 0.0001$/;"	v
+main	crnn_main_v2.py	/^def main(crnn, train_loader, val_loader, criterion, optimizer):$/;"	f
+main	data_generator/generator.py	/^def main(save_path, num, file):$/;"	f
+manualSeed	crnn_main.py	/^    manualSeed = random.randint(1, 10000)  # fix seed$/;"	v
+map_location	test.py	/^    map_location=torch.device('cpu')$/;"	v
+math	dataset_v2.py	/^import math$/;"	i
+matplotlib	dataset_v2.py	/^import matplotlib.pyplot as plt$/;"	i
+mean	params.py	/^mean = 0.588$/;"	v
+model	test.py	/^    model = crnn.CRNN(32, 1, nclass, 256)$/;"	v
+models	crnn_main.py	/^import models.crnn as crnn$/;"	i
+models	crnn_main_v2.py	/^import models.crnn as crnn$/;"	i
+models	test.py	/^import models.crnn as crnn$/;"	i
+n_test_disp	params.py	/^n_test_disp = 10$/;"	v
+name	setup.py	/^    name="warpctc_pytorch",$/;"	v
+name	setup.py	/^    name='warpctc_pytorch._warp_ctc',$/;"	v
+nc	crnn_main.py	/^    nc = 1$/;"	v
+nclass	crnn_main.py	/^    nclass = len(params.alphabet) + 1$/;"	v
+nclass	test.py	/^nclass = len(alphabet)+1$/;"	v
+nh	params.py	/^nh = 256$/;"	v
+niter	params.py	/^niter = 300$/;"	v
+nn	models/crnn.py	/^import torch.nn as nn$/;"	i
+nn	models/crnn.py	/^import torch.nn.functional as F$/;"	i
+nn	utils.py	/^import torch.nn as nn$/;"	i
+np	crnn_main.py	/^import numpy as np$/;"	i
+np	crnn_main_v2.py	/^import numpy as np$/;"	i
+np	data_generator/generator.py	/^import numpy as np$/;"	i
+np	dataset.py	/^import numpy as np$/;"	i
+np	dataset_v2.py	/^import numpy as np$/;"	i
+np	test.py	/^import numpy as np$/;"	i
+np	to_lmdb/to_lmdb_py2.py	/^import numpy as np$/;"	i
+np	to_lmdb/tolmdb_py3.py	/^import numpy as np$/;"	i
+np	utils.py	/^import numpy as np $/;"	i
+num_workers	crnn_main.py	/^        num_workers=int(params.workers),$/;"	v
+oneHot	utils.py	/^def oneHot(v, v_length, nc):$/;"	f
+opt	test.py	/^opt = parser.parse_args()$/;"	v
+optim	crnn_main.py	/^import torch.optim as optim$/;"	i
+optim	crnn_main_v2.py	/^import torch.optim as optim$/;"	i
+optimizer	crnn_main.py	/^        optimizer = optim.Adadelta(crnn.parameters(), lr=params.lr)$/;"	v
+optimizer	crnn_main.py	/^        optimizer = optim.Adam(crnn.parameters(), lr=params.lr,$/;"	v
+optimizer	crnn_main.py	/^        optimizer = optim.RMSprop(crnn.parameters(), lr=params.lr)$/;"	v
+os	crnn_main.py	/^import os$/;"	i
+os	crnn_main_v2.py	/^import os$/;"	i
+os	data_generator/generator.py	/^import os$/;"	i
+os	dataset_v2.py	/^import os$/;"	i
+os	setup.py	/^import os$/;"	i
+os	test.py	/^import sys, os$/;"	i
+os	to_lmdb/to_lmdb_py2.py	/^import os$/;"	i
+os	to_lmdb/tolmdb_py3.py	/^import os$/;"	i
+os	utils.py	/^import os$/;"	i
+outputPath	to_lmdb/to_lmdb_py2.py	/^    outputPath = ".\/lmdb"$/;"	v
+package	setup.py	/^    package=True,$/;"	v
+packages	setup.py	/^    packages=find_packages(),$/;"	v
+params	crnn_main.py	/^import params$/;"	i
+params	crnn_main_v2.py	/^import params$/;"	i
+params	dataset_v2.py	/^import params$/;"	i
+params	test.py	/^import params$/;"	i
+params	utils.py	/^import params$/;"	i
+parser	test.py	/^parser = argparse.ArgumentParser()$/;"	v
+platform	setup.py	/^import platform$/;"	i
+plt	dataset_v2.py	/^import matplotlib.pyplot as plt$/;"	i
+preprocessing	dataset_v2.py	/^	def preprocessing(self, image):$/;"	m	class:baiduDataset
+prettyPrint	utils.py	/^def prettyPrint(v):$/;"	f
+print_function	crnn_main.py	/^from __future__ import print_function$/;"	i
+print_function	crnn_main_v2.py	/^from __future__ import print_function$/;"	i
+pu	test.py	/^import pudb;pu.db$/;"	i
+pudb	test.py	/^import pudb;pu.db$/;"	i
+random	crnn_main.py	/^import random$/;"	i
+random	crnn_main_v2.py	/^import random$/;"	i
+random	data_generator/generator.py	/^import random$/;"	i
+random	dataset.py	/^import random$/;"	i
+random	utils.py	/^import random$/;"	i
+randomSequentialSampler	dataset.py	/^class randomSequentialSampler(sampler.Sampler):$/;"	c
+random_choice_in_process_func	data_generator/generator.py	/^def random_choice_in_process_func():$/;"	f
+random_font	data_generator/generator.py	/^def random_font(font_path):$/;"	f
+random_font_size	data_generator/generator.py	/^def random_font_size():$/;"	f
+random_noise_func	data_generator/generator.py	/^def random_noise_func():$/;"	f
+random_sample	params.py	/^random_sample = True$/;"	v
+random_word_color	data_generator/generator.py	/^def random_word_color():$/;"	f
+random_x_y	data_generator/generator.py	/^def random_x_y(bground_size, font_size):$/;"	f
+re	crnn_main.py	/^import re$/;"	i
+re	crnn_main_v2.py	/^import re$/;"	i
+re	to_lmdb/to_lmdb_py2.py	/^import re$/;"	i
+re	to_lmdb/tolmdb_py3.py	/^import re$/;"	i
+reset	utils.py	/^    def reset(self):$/;"	m	class:averager
+resize	dataset_v2.py	/^from skimage.transform import resize$/;"	i
+resizeNormalize	dataset.py	/^class resizeNormalize(object):$/;"	c
+rotate_func	data_generator/generator.py	/^def rotate_func():$/;"	f
+sampler	crnn_main.py	/^        sampler = None$/;"	v
+sampler	crnn_main.py	/^        sampler = dataset.randomSequentialSampler(train_dataset, params.batchSize)$/;"	v
+sampler	dataset.py	/^from torch.utils.data import sampler$/;"	i
+saveInterval	params.py	/^saveInterval = 2$/;"	v
+set_a	data_generator/to_dictionary.py	/^	set_a = set(list_a)$/;"	v
+set_b	data_generator/to_dictionary.py	/^	set_b = set(list_b)$/;"	v
+set_c	data_generator/to_dictionary.py	/^	set_c = set(list_a) & set(list_b)$/;"	v
+setup	setup.py	/^from setuptools import setup, find_packages$/;"	i
+six	dataset.py	/^import six$/;"	i
+sources	setup.py	/^    sources=['src\/binding.cpp'],$/;"	v
+started	test.py	/^    started = time.time()$/;"	v
+std	params.py	/^std = 0.193$/;"	v
+sto_choice_from_info_str	data_generator/generator.py	/^def sto_choice_from_info_str(quantity=10):$/;"	f
+str1	test.py	/^str1 = alphabets.alphabet$/;"	v
+strLabelConverter	utils.py	/^class strLabelConverter(object):$/;"	c
+stretching_func	data_generator/generator.py	/^def stretching_func():$/;"	f
+sys	dataset.py	/^import sys$/;"	i
+sys	setup.py	/^import sys$/;"	i
+sys	test.py	/^import sys, os$/;"	i
+test_dataset	crnn_main.py	/^    test_dataset = dataset.lmdbDataset($/;"	v
+text	crnn_main.py	/^    text = Variable(text)$/;"	v
+text	crnn_main.py	/^    text = torch.IntTensor(params.batchSize * 5)$/;"	v
+time	test.py	/^import time$/;"	i
+tmp	test.py	/^    tmp=    torch.cuda.is_available()$/;"	v
+to_alphabet	utils.py	/^def to_alphabet(path):$/;"	f
+to_dictionary	data_generator/generator.py	/^from to_dictionary import to_dictionary$/;"	i
+to_dictionary	data_generator/to_dictionary.py	/^def to_dictionary(text_path='', code='utf-8'):$/;"	f
+torch	crnn_main.py	/^import torch$/;"	i
+torch	crnn_main.py	/^import torch.backends.cudnn as cudnn$/;"	i
+torch	crnn_main.py	/^import torch.optim as optim$/;"	i
+torch	crnn_main.py	/^import torch.utils.data$/;"	i
+torch	crnn_main_v2.py	/^import torch$/;"	i
+torch	crnn_main_v2.py	/^import torch.backends.cudnn as cudnn$/;"	i
+torch	crnn_main_v2.py	/^import torch.optim as optim$/;"	i
+torch	crnn_main_v2.py	/^import torch.utils.data$/;"	i
+torch	dataset.py	/^import torch$/;"	i
+torch	dataset_v2.py	/^import torch$/;"	i
+torch	models/crnn.py	/^import torch.nn as nn$/;"	i
+torch	models/crnn.py	/^import torch.nn.functional as F$/;"	i
+torch	setup.py	/^import torch$/;"	i
+torch	test.py	/^import torch$/;"	i
+torch	utils.py	/^import torch$/;"	i
+torch	utils.py	/^import torch.nn as nn$/;"	i
+torchvision	dataset.py	/^import torchvision.transforms as transforms$/;"	i
+total	data_generator/generator.py	/^    total = 1000$/;"	v
+tqdm	utils.py	/^from tqdm import tqdm$/;"	i
+train	crnn_main_v2.py	/^def train(crnn, train_loader, criterion, iteration):$/;"	f
+trainBatch	crnn_main.py	/^def trainBatch(crnn, criterion, optimizer, train_iter):$/;"	f
+train_dataset	crnn_main.py	/^    train_dataset = dataset.lmdbDataset(root=args.trainroot)$/;"	v
+train_loader	crnn_main.py	/^    train_loader = torch.utils.data.DataLoader($/;"	v
+training	crnn_main.py	/^def training(crnn,train_loader,criterion,optimizer):$/;"	f
+transforms	dataset.py	/^import torchvision.transforms as transforms$/;"	i
+transforms	dataset_v2.py	/^from torchvision import transforms, utils$/;"	i
+txt_path	compute_stds_means.py	/^txt_path = "H:\/DL-DATASET\/360M\/train.txt"$/;"	v
+url	setup.py	/^    url="https:\/\/github.com\/baidu-research\/warp-ctc",$/;"	v
+utils	compute_stds_means.py	/^import utils$/;"	i
+utils	crnn_main.py	/^import torch.utils.data$/;"	i
+utils	crnn_main.py	/^import utils$/;"	i
+utils	crnn_main_v2.py	/^import torch.utils.data$/;"	i
+utils	crnn_main_v2.py	/^import utils$/;"	i
+utils	dataset_v2.py	/^from torchvision import transforms, utils$/;"	i
+utils	dataset_v2.py	/^import utils$/;"	i
+utils	test.py	/^import utils$/;"	i
+val	crnn_main.py	/^def val(net, dataset, criterion, max_iter=100):$/;"	f
+val	crnn_main_v2.py	/^def val(net, val_loader, criterion, iteration, max_i=1000):$/;"	f
+val	utils.py	/^    def val(self):$/;"	m	class:averager
+valInterval	params.py	/^valInterval = 400$/;"	v
+val_batchSize	params.py	/^val_batchSize = 16$/;"	v
+value_list	preprocessing.py	/^	value_list = ['%s %s'%(segment_list.split(' ')[0], ''.join([char_dict[int(val)] for val in segment_list[:-1].split(' ')[1:]])) for segment_list in file.readlines()]$/;"	v
+version	setup.py	/^    version="0.1",$/;"	v
+warp_ctc_path	setup.py	/^    warp_ctc_path = os.environ["WARP_CTC_PATH"]$/;"	v
+warp_ctc_path	setup.py	/^warp_ctc_path = "..\/build"$/;"	v
+weights_init	crnn_main.py	/^def weights_init(m):$/;"	f
+weights_init	crnn_main_v2.py	/^def weights_init(m):$/;"	f
+with_cuda	setup.py	/^    with_cuda=enable_gpu,$/;"	v
+word	to_lmdb/to_lmdb_py2.py	/^        word = line.split()[1]$/;"	v
+word	to_lmdb/tolmdb_py3.py	/^        word = line.split()[1]$/;"	v
+workers	params.py	/^workers = 2$/;"	v
+writeCache	to_lmdb/to_lmdb_py2.py	/^def writeCache(env, cache):$/;"	f
+writeCache	to_lmdb/tolmdb_py3.py	/^def writeCache(env, cache):$/;"	f
